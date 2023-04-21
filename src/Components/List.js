@@ -1,23 +1,16 @@
 import React from 'react'
+import { useContext } from 'react'
 
-function List(props) {
-    const { repos } = props;
-    if (!repos || repos.length===0) return <div><p>no repo</p></div>
+
+
+function List({name,price}) {
+ 
   return (
     <div>
-      <ul>
-        <p>avaliable public repos</p>
-        {repos.map((repo)=>
-        {
-            return(
-            <li key={repo.id}>
-                <span>{repo.name}</span>
-                <span>{repo.description}</span>
-             
-            </li>)
-        })}
-      </ul>
-
+   
+   <h2>{name}</h2>
+   <p>{price}</p>
+ 
 
     </div>
   )
