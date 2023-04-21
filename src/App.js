@@ -28,6 +28,7 @@ function App() {
         <MovieList />
         <Add/>
     </Movieprovider> */}
+    <Register />
     </div>
      
 
