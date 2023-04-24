@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function Aboutus() {
   return (
    <section className='w-full m-auto px-10 py-10 '>
+    
     <div className='about'>
         <div className='containerupper mb-32 flex flex-col md:flex-row justify-between space-x-8'>
             <div className='content md:w-2/3 ml-5'>
