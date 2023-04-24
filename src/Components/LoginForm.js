@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef,useState,useEffect,useContext} from 'react'
 import AuthContext from "../context/AuthProvider";
 import axios from '../api/axios';
+import { Link } from 'react-router-dom';
 // const LOGIN_URL = '/auth'
 function LoginForm() {
     const { setAuth } = useContext(AuthContext)
@@ -52,25 +53,25 @@ function LoginForm() {
     <div>
      	{success ? (<div>logged in</div>) :(
     <div className='flex items-center justify-center bg-slate-300 min-h-screen min-w-[700px]'>
-        <div className='px-12 py-6 mt-4 bg-white shadow-lg'>
+        <div className='px-16 sm:px-10 py-8 mt-4 bg-white shadow-lg'>
         <p ref={errRef} className='{errMsg ? "errmsg" : "offscreen"} aria-live="assertive'>{errMsg}</p>
         <h2 className='text-2xl font-bold text-center'>Login</h2>
-        <p className='p-2 '>Not registered yet? <a className='text-blue-600'> Sign In</a></p>
-        <form onSubmit={handleSubmit}>
+        <p className='p-2 '>Not registered yet? <Link to="/" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1'> Sign Up</Link> </p>
+        <form onSubmit={handleSubmit} className='space-y-6 mb-0 p-2'>
                 <div className='mt-4'>
                         <div>
                             <label className="block" htmlFor="id">ID Number</label>
-                            <input type="text" placeholder="ID Number" id='id' autoComplete="off" required value={idNum} onChange={(e)=>setIdNum(e.target.value)} className="w-full p-1.5 mt-2 border rounded-md" />
+                            <input type="text" placeholder="ID Number" id='id' autoComplete="off" required value={idNum} onChange={(e)=>setIdNum(e.target.value)} className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
                         </div>
                         <div className='mt-4'>
                             <label className="block" htmlFor="Password">Password</label>
-                            <input type="password" placeholder="Password" id='password' required value={pwd}  onChange={(e)=>setPwd(e.target.value)}   className="w-full p-1.5 mt-2 border rounded-md" />
+                            <input type="password" placeholder="Password" id='password' required value={pwd}  onChange={(e)=>setPwd(e.target.value)}   className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
                         </div>
                         <div className='mt-4'>
-                            <button className='bg-sky-700 p-1.5 w-full rounded hover:bg-sky-500'>Login</button>
+                            <button className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md'>Login</button>
                         </div>
                         <div className=' mt-3'>
-                            <a className='text-right cursor-pointer'><p>Forget Password?</p></a>
+                            <a className='text-right cursor-pointer font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1'><p>Forget Password?</p></a>
                         </div>
 
                 </div>

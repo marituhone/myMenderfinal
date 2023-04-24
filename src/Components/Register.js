@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from '../api/axios';
 
  const Name_REGEX= /^[A-z][A-z]{3,23}$/;
  const Id_REGEX = /^bole\/\d{5}\/\d{4}$/ //begin with a-z follow by forward slash then digit of 4 then slash then digit of 2
  const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/; //must contain at least one lower case one upper case and number and special character and the length should be 8-24
+ const EMAIL_REGEX = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9._-]+)\.([a-zA-Z]{2,5})$/;
 
+ const REGISTER_URL = '/register';
 function Register() {  
     const errRef = useRef('')
  
@@ -25,6 +28,9 @@ function Register() {
     const [idNum,setIdNum]= useState('');
     const [validId,setValidId] = useState(false);
 
+    const [email,setEmail] = useState('');
+    const [validEmail,setValidEmail] = useState(false);
+
 
     const [errMsg,setErrMsg] =useState('');
     const [success,setSuccess] =useState(false);
@@ -38,6 +44,13 @@ function Register() {
         //setValidFname(Name_REGEX.test(Fname))
 
     },[Fname])
+
+    useEffect(()=>
+    {
+        const emailresult = EMAIL_REGEX.test(email);
+        console.log(emailresult);
+        setValidEmail(emailresult);
+    },[email])
 
     useEffect (() =>
     {
@@ -80,9 +93,39 @@ function Register() {
     
     const handleSubmit = async (e)=>
     {
-        e.PreventDefault();
-        console.log(Fname,Lname)
-        setSuccess(true)
+        
+        e.preventDefault();
+        try 
+        {
+          const response = await axios.post('http://localhost:8000/api/register/',JSON.stringify({first_name:Fname,last_name:Lname,password:pwd,identification_number:idNum,email:email}),  {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true
+            
+        });
+            console.log(response?.data);
+            console.log(response?.accessToken);
+            console.log(JSON.stringify(response))
+            setSuccess(true);
+            setFname('');
+            setPwd('');
+            setLname('');
+            setIdNum('');
+            setconfirmPwd('');
+            setValidEmail('');
+
+          
+        }
+        catch(err)
+        {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 409) {
+                setErrMsg('Username Taken');
+            } else {
+                setErrMsg('Registration Failed')
+            }
+            errRef.current.focus()
+        }
     }
 
 
@@ -97,8 +140,8 @@ function Register() {
         <h2 className='font-semibold text-center text-2xl text-gray-900'>Create your account</h2>
         <p className='text-center'>
             Already registered?
-            {/* <Link to="/"><a href="#" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1' >Sign in</a></Link> */}
-            <a href="#" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1' >Sign in</a>
+            <Link to="/login" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1'>Sign in</Link>
+            {/* <a href="#" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1' >Sign in</a> */}
 
         </p>
         <p ref={errRef} className={errMsg ? "errMsg" : "offscreen"}>{errMsg}</p>
@@ -138,6 +181,17 @@ function Register() {
                             enter a valid id.<br />
                          </p>
             </div>
+
+
+            <div>
+                <label htmlFor='email' className='block font-medium text-sm text-gray-700' >Email</label>
+                <div class="mt-1">
+                <input type='email' id='email' autoComplete='off' aria-invalid={validEmail ? "false" : "true"} aria-describedby='emnote' onChange={(e) =>setEmail(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
+                </div>
+                <p id='emnote' className={email && !validEmail ? "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10" : "hidden"}>
+                            enter a valid email.<br />
+                         </p>
+            </div>
             
     
             <div>
@@ -157,7 +211,7 @@ function Register() {
                 <p id='cnote' className={confirmPwd && !validconfirmPwd ?  "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10 " : "hidden" }>password doesn't match</p>
             </div>
             <div>
-                <button  disabled={!validFname || !validPwd || !validconfirmPwd  || validLname ? true : false} className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md' >Sign up</button>
+                <button  type="submit" className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md' >Sign up</button>
             </div>
             </form>
         </div>
