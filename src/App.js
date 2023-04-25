@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Aboutus, Appointmentid, Contactus, Footer, Landing, LoginForm, Navbar, Register, Requirements } from "./Components"
+import Layout from "./Components/Layout"
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     
     <div className="bg-custom">
       <BrowserRouter>
-          <Navbar />
+        <Navbar /> 
         <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/footer" element={<Footer />} /> 
@@ -20,10 +21,9 @@ function App() {
             <Route path="/about" element={<Aboutus />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
-
-            
-          
           </Routes>
+          <Footer />
+          
    </BrowserRouter>
 
 

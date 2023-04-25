@@ -22,7 +22,7 @@ function Navbar() {
    
   }
   return (
-    <nav className='bg-red-medium w-full'>
+    <nav className='bg-red-medium w-full '>
       <div className='justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8'>
           <div className=' flex items-center justify-between py-3 md:py-5 md:block'>
               <a className='cursor-pointer'>
