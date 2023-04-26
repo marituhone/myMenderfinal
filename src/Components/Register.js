@@ -211,7 +211,9 @@ function Register() {
                 <p id='cnote' className={confirmPwd && !validconfirmPwd ?  "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10 " : "hidden" }>password doesn't match</p>
             </div>
             <div>
+                <Link to="/register">
                 <button  type="submit" className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md' >Sign up</button>
+                </Link>
             </div>
             </form>
         </div>

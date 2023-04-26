@@ -21,7 +21,7 @@ function App() {
             <Route path="/about" element={<Aboutus />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
-            {/* <Route path="/" element={<Services />} /> */}
+        
 
           </Routes>
           <Footer />

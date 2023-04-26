@@ -4,9 +4,9 @@ import Banner from './Banner'
 function Services() {
   return (
     <section>
-        <div className='all py-4'>
+        <div className='all py-10'>
           <div className='textpart'>
-              <h2 className='font-bold text-3xl text-center mb-4'>Services</h2>
+              <h2 className='font-bold text-3xl text-center mb-10'>Services</h2>
           </div>
           <div className='justify-between  space-y-6 md:space-y-0 flex flex-col  md:flex-row  ml-8 md:space-x-10'>
                   <div className='border border-x-2 text-gray-700  px-4 py-5 leading-7 shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 justify-center items-center'>
