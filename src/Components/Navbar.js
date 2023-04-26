@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const [isOpen,setIsOpen] = useState(false);  //for the toggle
   const[drop,setDrop] =useState(false);  //for dropdowns
-  const [selectedItem,setSelectedItem] = useState('Amharic');
+  const [selectedItem,setSelectedItem] = useState('AMHARIC');
   const handleDrop =() =>
   {
     setDrop(!drop)
@@ -22,11 +22,11 @@ function Navbar() {
    
   }
   return (
-    <nav className='bg-red-medium w-full '>
-      <div className='justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8'>
+    <nav className='bg-red-medium w-full py-4'>
+      <div className='justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 text-gray-700  font-serif font-light uppercase'>
           <div className=' flex items-center justify-between py-3 md:py-5 md:block'>
               <a className='cursor-pointer'>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bg-white w-6 h-6 ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bg-white w-8 h-8 ">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
                </svg>
                </a>
@@ -37,9 +37,10 @@ function Navbar() {
             </div>
 
            <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${isOpen ? "block" : "hidden"}`}>
-                  <ul className='justify-center items-center md:flex md:space-x-6 text-black space-x-3'>
+                  <ul className='justify-center items-center md:flex md:space-x-6 '>
+                    <div className=' justify-center items-center md:flex md:space-x-6   space-x-3 mr-8'>
                     <li >
-                    <Link to="/">Home</Link>
+                    <Link to="/" className=' '>Home</Link>
                     </li>
                     <li>
                     <Link to="/requirement">Requirement</Link>
@@ -53,16 +54,17 @@ function Navbar() {
                     <li>
                     <Link to="/contact">Contact</Link>
                     </li>
+                    </div>
 
-                    <div className="dropdown relative ">
-                        <button onClick={handleDrop}>{selectedItem}<svg class="w-4 h-4 ml-1 inline-flex" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" className='hidden'></path></svg></button>
+                    <div className="dropdown relative  ">
+                        <button onClick={handleDrop}>{selectedItem}<svg class="w-4 h-4 ml-1 inline-flex " aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" className='hidden'></path></svg></button>
                         {drop ?
-                          (<ul className="menu absolute list-none my-5 w-28 py-2 bg-white  shadow">
-                              <li className="menu-item bg-white hover:bg-slate-200">
-                                <button  onClick={()=>handleSelectedItem('Amharic')}>Amharic</button>
+                          (<ul className="menu absolute list-none my-5 w-28 py-2 bg-white text-gray-700  font-serif font-light uppercase shadow">
+                              <li className="menu-item bg-white hover:bg-slate-200 text-gray-700  font-serif font-light uppercase">
+                                <button className='text-gray-700  font-serif font-light uppercase' onClick={()=>handleSelectedItem('AMHARIC')}>AMHARIC</button>
                               </li>
-                              <li className="menu-item bg-white hover:bg-slate-200">
-                                <button onClick={()=>handleSelectedItem('English')}>English</button>
+                              <li className="menu-item bg-white hover:bg-slate-200 text-gray-700  font-serif font-light uppercase">
+                                <button className='text-gray-700  font-serif font-light uppercase' onClick={()=>handleSelectedItem('ENGLISH')}>ENGLISH</button>
                               </li>
                               </ul>
                               ) : null}

@@ -1,44 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-function Banner() {
+function FeedbackForm() {
+    const [title,setTitle] = useState("");
+    const [description,setDescription] = useState("");
+    const [sucess,setSucess] = useState(false);
   return (
-    <section>
-           <div className='banner mt-6  space-y-6 md:space-y-0 flex flex-col justify-between items-center md:flex-row  ml-8 md:space-x-10'>
-                <div className=' items-center border border-x-2'>
-                    <h2 className='uppercase font-bold  py-2'>Create your Account</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 ">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                    <p className=''> 
-                        It's free and easy to create your account. 
-                        Get a feel for how our online booking system works before committing to payment.
-                    </p>
-                </div>
-                <div className=''>
-                    <h2 className='uppercase font-bold text-center py-2'>Create your Account</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                    <p>
-                        It's free and easy to create your account. 
-                        Get a feel for how our online booking system works before committing to payment.
-                    </p>
-                </div>
-                <div className=''>
-                    <h2 className='uppercase font-bold text-center py-2'>Create your Account</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
-                    <p>
-                        It's free and easy to create your account. 
-                        Get a feel for how our online booking system works before committing to payment.
-                    </p>
-                </div>
+    <section className='py-11 px-4'> 
+        <div className='sm:w-full sm:max-w-md sm:mx-auto space-y-4' >
+            <h3 className='font-serif font-semibold text-center'>Leave comment</h3>
+            <form className='w-full bg-white border border-gray-300 shadow rounded-lg space-y-6 py-12 px-6'>
+                  <div className='space-y-4'>
+                    <label htmlFor='title' className='block font-medium font-serif text-gray-700' >Title</label>
+                    <input type='text' id='title'className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
+                    <label htmlFor='title' className='block font-medium font-serif text-gray-700' >Description</label>
+                    <textarea id="w3review" name="w3review" rows="4" cols="50" className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500'></textarea>
+                  </div>
+                   <div>
+                        <Link to="/faq">
+                            <button  type="submit" className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium  shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md' >Sign up</button>
+                        </Link>
+                    </div>
 
-           </div>
 
+            </form>
+        </div>
     </section>
   )
 }
 
-export default Banner
+export default FeedbackForm

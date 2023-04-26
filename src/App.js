@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Aboutus, Appointmentid, Contactus, Footer, Landing, LoginForm, Navbar, Register, Requirements } from "./Components"
 import Services from "./Components/Services"
+import FeedbackForm from "./Components/FeedbackForm"
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
             <Route path="/about" element={<Aboutus />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/faq" element={<FeedbackForm />} />
+
         
 
           </Routes>
