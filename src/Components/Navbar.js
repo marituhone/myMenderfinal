@@ -38,7 +38,7 @@ function Navbar() {
 
            <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${isOpen ? "block" : "hidden"}`}>
                   <ul className='justify-center items-center md:flex md:space-x-6 '>
-                    <div className=' justify-center items-center md:flex md:space-x-6   space-x-3 mr-8'>
+                    <div className=' justify-center items-center md:flex md:space-x-6   mr-8'>
                     <li >
                     <Link to="/" className=' '>Home</Link>
                     </li>

@@ -6,14 +6,14 @@ function Footer() {
     <section>
         <div className='all w-full m-auto px-10 py-10 bg-slate-800 space-y-4 text-white'>
 
-                <div className='upper  flex flex-col md:flex-row   space-y-6 md:space-y-0 justify-around border-b  border-white/20'>
+                <div className='upper  flex flex-col md:flex-row  space-y-6 ml-4 md:ml-0 md:space-y-0 justify-around border-b py-6 border-white/20'>
                     <div className='flex flex-col space-y-6 md:mb-4'>
                         <h2 className='font-semibold text-xl'>About our services</h2>
                         <Link to="/requirement"><p className='font-normal font-serif text-gray-400'>Service requiremnts</p></Link>
                         <Link to="/appointment"><p className='font-normal font-serif text-gray-400' >Scedule Appointment</p></Link>
                         <Link to="/about"><p className='font-normal font-serif text-gray-400'>About Us</p></Link> 
                     </div>
-                    <div className='flex flex-col space-y-6 mb-4'>
+                    <div className='flex flex-col  space-y-6 mb-4'>
                         <h2 className='font-semibold text-xl'>Contact Us</h2>
                         <div className='flex space-x-2'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
