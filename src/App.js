@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { Aboutus, Appointmentid, Contactus, Footer, Landing, LoginForm, Navbar, Register, Requirements } from "./Components"
 import Services from "./Components/Services"
 import FeedbackForm from "./Components/FeedbackForm"
+import SceduleAppointment from "./Components/SceduleAppointment"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/requirement" element={<Requirements />} />
             <Route path="/contact" element={<Contactus/>} />
             <Route path="/appointmentid" element={<Appointmentid />} />
+            <Route path="/abc" element={<SceduleAppointment />} />
             <Route path="/about" element={<Aboutus />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
