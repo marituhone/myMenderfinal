@@ -10,7 +10,7 @@ function SceduleAppointment() {
                 
                 <div className='space-y-6 bg-white'>
                     <div className='service1 flex flex-col md:flex-row  md:max-w-full bg-slate-100  font-serif font-light  md:px-8'>
-                        <div className='bg-blue-700 p-14 space-y-2 items-center w-full'>
+                        <div className='bg-blue-700 p-14 space-y-2 items-center'>
                             
                             <strong className='text-white font-semibold  ml-24 sm:ml-0'>Licence Appointmrnt</strong>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" bg-white rounded-full w-6 h-6   mx-auto md:ml-6">

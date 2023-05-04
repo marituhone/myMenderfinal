@@ -1,11 +1,10 @@
 import React from 'react'
-import { accordions } from './Data'
-import Accordion from './Accordion'
+import Accordion from "../Components/Accordion";
+import { accordions  } from "../Components/Data";
 
 function Requirements() {
   return (
    <section className='mt-10 mb-32'>
-    {/* <h2 className='font-serif mb-10 border max-w-xs text-center p-2.5'>How To Apply for services</h2> */}
     
       <div className='max-w-[720] w-full flex flex-col gap-6 px-24'>
         {accordions.map((item,id)=>

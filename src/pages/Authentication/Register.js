@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import axios from '../api/axios';
+import axios from '../../services/api';
 
  const Name_REGEX= /^[A-z][A-z]{3,23}$/;
  const Id_REGEX = /^bole\/\d{5}\/\d{4}$/ //begin with a-z follow by forward slash then digit of 4 then slash then digit of 2
