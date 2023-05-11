@@ -36,12 +36,7 @@ function App() {
 
 
 
-    {/* <Movieprovider>
-        <Nav/>
-        <MovieList />
-        <Add/>
-    </Movieprovider> */}
-    {/* <Register /> */}
+   
     </div>
      
 
