@@ -7,7 +7,7 @@ function Banner() {
             text:"All applicants should secure an online appointment when applying for a Serivices",
         },
         {
-            text:"Confirmed appointment is required",
+            text:"Confirmed appointment is required,appointment when applying for a Serivices",
         },
         {
             text:"Applicants are reminded to be on site not earlier than 30 minutes on their selected date and time of appointment at their chosen consular office.",
@@ -26,7 +26,7 @@ function Banner() {
     <section className='banners py-12'>
         <div className='all'>
             <h2 className='text-center pt-8 font-serif font-bold text-2xl'>Manage Your Account With Confidence</h2>
-            <div className='flex flex-col md:flex-row justify-center  space-y-6 md:space-y-0 mt-12 ml-48 md:ml-0 md:space-x-44'>
+            <div className='flex flex-col md:flex-row justify-center  space-y-6 md:space-y-0 mt-12 ml-20 md:ml-0 md:space-x-44'>
                 <div className='flex flex-col items-center justify-center text-center  w-64'>
                    
                     <h2 className='text-center  font-serif  text-2xl font-light text-gray-700 py-3'>Create account</h2>
@@ -78,20 +78,20 @@ function Banner() {
             </div>
         </div>
         <div className='banner2 bg-slate-400 mt-12 space-y-4'>
-            <h3 className='text-center pt-8 font-serif font-bold text-2xl'> Before You Apply</h3>
+            <h3 className='text-center pt-8 font-serif font-bold text-2xl '> Before You Apply</h3>
             <div className='p-4'>
                 {rules.map((rule) => (
-                    <div className='flex items-center  ml-16 leading-10 font-normal font-serif text-gray-700 text-lg'>
-                        
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-5 bg-white">
+                  <div className='flex items-center md:ml-20'>
+                        <div className='pr-2 pl-2 pb-2 align-self-start'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2  flex-shrink-0 bg-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>  
-                            {rule.text}
-                          
-
-                     
-                        
-                    </div>
+                            </svg>
+                        </div>
+                        <div className='pr-2 pl-2 pb-2 mt:8 align-self-end'>
+                                <p className='text-sm leading-8 flex-shrink-0 flex-1'>{rule.text}</p>
+                        </div>
+                </div>
+                
                 ))}
                     
             </div>

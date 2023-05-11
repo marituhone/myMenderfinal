@@ -52,8 +52,8 @@ function LoginForm() {
   return (
     <div className=''>
      	{success ? (<div>logged in</div>) :(
-    <div className='flex items-center justify-center border-gray-400 shadow-lg min-h-screen min-w-[700px]'>
-        <div className='px-16 sm:px-10 py-8 mt-4 bg-white shadow-lg'>
+    <div className='flex items-center justify-center border-gray-400 shadow-lg min-h-screen '>
+        <div className='px-16 sm:px-10 py-8 mt-4 bg-white shadow-lg sm:mx-auto sm:w-full sm:max-w-md'>
         <p ref={errRef} className='{errMsg ? "errmsg" : "offscreen"} aria-live="assertive'>{errMsg}</p>
         <h2 className='text-2xl font-bold text-center'>Login</h2>
         <p className='p-2 '>Not registered yet? <Link to="/" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1'> Sign Up</Link> </p>
