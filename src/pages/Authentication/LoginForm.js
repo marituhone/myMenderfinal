@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef,useState,useEffect,useContext} from 'react';
 import AuthContext from "../../providers/AuthContext";
-import axios from '../../services/api';
+// import axios from '../../services/api';
 import { Link } from 'react-router-dom';
 // const LOGIN_URL = '/auth'
 function LoginForm() {
@@ -56,7 +56,7 @@ function LoginForm() {
         <div className='px-16 sm:px-10 py-8 mt-4 bg-white shadow-lg sm:mx-auto sm:w-full sm:max-w-md'>
         <p ref={errRef} className='{errMsg ? "errmsg" : "offscreen"} aria-live="assertive'>{errMsg}</p>
         <h2 className='text-2xl font-bold text-center'>Login</h2>
-        <p className='p-2 '>Not registered yet? <Link to="/" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1'> Sign Up</Link> </p>
+        <p className='p-2 '>Not registered yet? <Link to="/register" className='font-medium text-indigo-800 hover:text-indego-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ml-1'> Sign Up</Link> </p>
         <form onSubmit={handleSubmit} className='space-y-6 mb-0 p-2'>
                 <div className='mt-4'>
                         <div>

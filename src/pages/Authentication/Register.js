@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import axios from '../../services/api';
+// import axios from '../../services/api';
 
  const Name_REGEX= /^[A-z][A-z]{3,23}$/;
  const Id_REGEX = /^bole\/\d{5}\/\d{4}$/ //begin with a-z follow by forward slash then digit of 4 then slash then digit of 2
@@ -156,7 +156,7 @@ function Register() {
                         <div class="mt-1">
                         <input id='firstname' type="text"  aria-invalid={validFname ? "false" : "true"}  aria-describedby="fnote" autoComplete="off" onChange={(e) =>setFname(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
                         </div>
-                        <p id='fnote' className={Fname &&  !validFname ? "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10 " : "hidden"}>
+                        <p id='fnote' className={Fname &&  !validFname ? "mr-1 text-xs text-black py-1 px-1  bottom-10 " : "hidden"}>
                             4 to 24 alphabets.<br />
                          </p>
                     </div>
@@ -165,7 +165,7 @@ function Register() {
                         <div class="mt-1">
                         <input id='lastname' type="text"   aria-invalid={validLname ? "false" : "true"} aria-describedby="Lnote"  autoComplete="off" onChange={(e)=>setLname(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
                         </div>
-                        <p id='Lnote' className={Lname &&  !validLname ? "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10" : "hidden"}>
+                        <p id='Lnote' className={Lname &&  !validLname ? "mr-1 text-xs text-black py-1 px-1  bottom-10" : "hidden"}>
                             only alphabets.<br />
                          </p>
                     </div>
@@ -177,7 +177,7 @@ function Register() {
                 <div class="mt-1">
                 <input type='text' id='idcard' autoComplete='off' aria-invalid={validId ? "false" : "true"} aria-describedby='inote' onChange={(e) =>setIdNum(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
                 </div>
-                <p id='inote' className={idNum && !validId ? "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10" : "hidden"}>
+                <p id='inote' className={idNum && !validId ? "mr-1 text-xs text-black py-1 px-1  bottom-10" : "hidden"}>
                             enter a valid id.<br />
                          </p>
             </div>
@@ -188,7 +188,7 @@ function Register() {
                 <div class="mt-1">
                 <input type='email' id='email' autoComplete='off' aria-invalid={validEmail ? "false" : "true"} aria-describedby='emnote' onChange={(e) =>setEmail(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
                 </div>
-                <p id='emnote' className={email && !validEmail ? "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10" : "hidden"}>
+                <p id='emnote' className={email && !validEmail ? "mr-1 text-xs text-black py-1 px-1  bottom-10" : "hidden"}>
                             enter a valid email.<br />
                          </p>
             </div>
@@ -198,7 +198,7 @@ function Register() {
                 <label htmlFor='password' className='block font-medium text-sm text-gray-700' >Password</label>
                 <div class="mt-1">
                 <input type='password' id='password' aria-invalid={pwd ? "false" : "true"} aria-describedby='pnote' onChange={(e)=>setPwd(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
-                <p id='pnote' className={pwd && !validPwd ? "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10 " : "hidden" }>8 to 24 characters.<br />
+                <p id='pnote' className={pwd && !validPwd ? "mr-1 text-xs  text-black py-1 px-1  bottom-10 " : "hidden" }>8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span></p>
                 </div>
@@ -208,7 +208,7 @@ function Register() {
                 <div class="mt-1">
                 <input type='password' id='cpassword' aria-invalid={confirmPwd ? "false" : "true"} aria-describedby='cnote' onChange={(e) => setconfirmPwd(e.target.value)} className='w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500' />
                 </div>
-                <p id='cnote' className={confirmPwd && !validconfirmPwd ?  "mr-1 text-xs bg-red-600 text-white py-1 px-1  bottom-10 " : "hidden" }>password doesn't match</p>
+                <p id='cnote' className={confirmPwd && !validconfirmPwd ?  "mr-1 text-xs text-black py-1 px-1  bottom-10 " : "hidden" }>password doesn't match</p>
             </div>
             <div>
                 <Link to="/register">

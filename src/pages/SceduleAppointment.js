@@ -19,7 +19,7 @@ function SceduleAppointment() {
 
                             
                         </div>
-                        <div className='hover:bg-blue-700 px-4 bg-red-600 w-full'>
+                        <div className='hover:bg-blue-700 px-4  w-full'>
                             <p className='py-10 font-normal'>First time applicants are requested to schedule for appointment. 
                                 You receive confirmation via email or SMS.
                                  Print the last page which has your appointment date and time. 

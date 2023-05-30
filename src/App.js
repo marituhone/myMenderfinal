@@ -7,6 +7,10 @@ import Footer from "./Components/common/Footer";
 import { Aboutus, Appointmentid, FeedbackForm, Landing, LoginForm, Register, Requirements, SceduleAppointment } from "./pages"
 
 
+// import Dashboard from './pages/Dashboard';
+// import { Dashboard } from "@mui/icons-material";
+
+
 function App() {
   
 
@@ -26,6 +30,7 @@ function App() {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
             <Route path="/faq" element={<FeedbackForm />} />
+            {/* <Route path="/admin" element={<Dashboard />} /> */}
 
         
 
