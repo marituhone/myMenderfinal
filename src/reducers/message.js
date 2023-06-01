@@ -1,7 +1,11 @@
-import { SET_MESSAGE, CLEAR_MESSAGE } from "../actions/types";
-// https://www.bezkoder.com/react-redux-jwt-auth/
+import { SET_MESSAGE, CLEAR_MESSAGE } from "../actions/type";
 
-const initialState = {};
+// const initialState = {};
+const initialState = {
+  error: null,
+  message: null,
+  // other properties...
+};
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
