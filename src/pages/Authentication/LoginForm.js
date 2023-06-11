@@ -3,24 +3,25 @@ import { useRef,useState,useEffect,useContext} from 'react';
 import AuthContext from "../../providers/AuthContext";
 
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-// const LOGIN_URL = '/auth'
+import axios from '../../api/axios';
+const LOGIN_URL = '/auth'
 function LoginForm() {
     const { setAuth } = useContext(AuthContext)
+    const userRef = useRef();
     const errRef = useRef();
-    const [idNum,setIdNum] = useState('');
-    const [pwd,setPwd] = useState('');
-    const [errMsg,setErrMsg]= useState('');
-    const [success,setSuccess] = useState(false)
+    const [identification_number,setIdentification_number] = useState('');
+    const [password,setPassword] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+    const [success, setSuccess] = useState(false);
     
     useEffect(()=>{
         setErrMsg('');
-    },[idNum,pwd])
+    },[identification_number,password])
     const handleSubmit = async (e) =>
             {
               e.preventDefault(); 
               try{
-                const response = await axios.post('/api/login/',JSON.stringify({idNum,pwd}),
+                const response = await axios.post('/api/login/',JSON.stringify({identification_number,password}),
                 {
                     headers:{'Content-Type':'application/json'},
                     withCredentials:true
@@ -62,11 +63,11 @@ function LoginForm() {
                 <div className='mt-4'>
                         <div>
                             <label className="block" htmlFor="id">ID Number</label>
-                            <input type="text" placeholder="ID Number" id='id' autoComplete="off" required value={idNum} onChange={(e)=>setIdNum(e.target.value)} className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+                            <input type="text" placeholder="ID Number" id='id' autoComplete="off" required value={identification_number} onChange={(e)=>setIdentification_number(e.target.value)} className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
                         </div>
                         <div className='mt-4'>
                             <label className="block" htmlFor="Password">Password</label>
-                            <input type="password" placeholder="Password" id='password' required value={pwd}  onChange={(e)=>setPwd(e.target.value)}   className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+                            <input type="password" placeholder="Password" id='password' required value={password}  onChange={(e)=>setPassword(e.target.value)}   className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
                         </div>
                         <div className='mt-4'>
                             <button className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md'>Login</button>

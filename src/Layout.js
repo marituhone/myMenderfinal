@@ -10,7 +10,7 @@ function Layout() {
 	// const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	return (
-		<div className="bg-[#EDF2F4]">
+		<div>
 			{isLoggedIn ? <NavbarLogged /> : <Navbar />}
 		</div>
 	);

@@ -16,11 +16,15 @@ export const logout = () => {
   localStorage.removeItem("user");
 };
 
-export const register = (identification_number, first_name, last_name, email, password, password2) => {
+export const register = (identification_number, first_name,last_name,email, password,password2) => {
   const endpoint = "auth/register_user/";
-  const data = { identification_number, first_name, last_name, email, password, password2 };
+ 
+  const data = { identification_number, first_name,last_name,email, password,password2 };
   return postRequest(endpoint, data)
     .then((response) => {
-      return response.data;
+      return  response.data;
     });
 };
+
+
+

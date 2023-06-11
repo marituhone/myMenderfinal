@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux';
 import { Aboutus, Appointmentid, FeedbackForm, Landing, LoginForm, Register, Requirements, SceduleAppointment } from "./pages"
 import NavbarLogged from "./Components/common/NavbarLogged";
 import Layout from "./Layout";
-import { Provider } from 'react-redux';
-import store from "./store";
+// import { Provider } from 'react-redux';
+// import store from "./store";
 
 // import Dashboard from './pages/Dashboard';
 // import { Dashboard } from "@mui/icons-material";
@@ -18,7 +18,7 @@ function App() {
  
 
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
     <div className="bg-custom">
       <BrowserRouter>
         {/* <Navbar />  */}
@@ -47,7 +47,7 @@ function App() {
 
    
     </div>
-    </Provider>
+    // </Provider>
 
     
    
