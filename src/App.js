@@ -4,9 +4,13 @@ import { useEffect, useState } from "react"
 import Navbar from "./Components/common/Navbar";
 import Footer from "./Components/common/Footer";
 import { useSelector } from 'react-redux';
-import { Aboutus, Appointmentid, FeedbackForm, Landing, LoginForm, Register, Requirements, SceduleAppointment } from "./pages"
+import { Aboutus, FeedbackForm, Landing, LoginForm, Register, Requirements, SceduleAppointment } from "./pages"
 import NavbarLogged from "./Components/common/NavbarLogged";
 import Layout from "./Layout";
+import AppointmentId from "./pages/Appointmentid";
+import Bid from "./pages/Bid";
+import Payment from "./pages/Payment";
+
 // import { Provider } from 'react-redux';
 // import store from "./store";
 
@@ -15,7 +19,7 @@ import Layout from "./Layout";
 
 
 function App() {
- 
+  const [date, setDate] = useState(new Date());
 
   return (
     // <Provider store={store}>
@@ -28,12 +32,14 @@ function App() {
             <Route path="/footer" element={<Footer />} /> 
             <Route path="/requirement" element={<Requirements />} />
               {/* <Route path="/contact" element={<Contactus/>} /> */}
-            <Route path="/appointmentid" element={<Appointmentid />} />
+            <Route path="/appointmentid" element={<AppointmentId />} />
             <Route path="/abc" element={<SceduleAppointment />} />
             <Route path="/about" element={<Aboutus />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<Register />} />
             <Route path="/faq" element={<FeedbackForm />} />
+            <Route path="/bid" element ={<Bid />} />
+            <Route path="/payment" element ={<Payment />} />
             {/* <Route path="/admin" element={<Dashboard />} /> */}
 
         
@@ -42,8 +48,6 @@ function App() {
           <Footer />
           
    </BrowserRouter>
-
-
 
    
     </div>

@@ -9,7 +9,7 @@ function LoginForm() {
     const { setAuth } = useContext(AuthContext)
     const userRef = useRef();
     const errRef = useRef();
-    const [identification_number,setIdentification_number] = useState('');
+    const [identification_number,setIdentificationNumber] = useState('');
     const [password,setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
@@ -17,40 +17,41 @@ function LoginForm() {
     useEffect(()=>{
         setErrMsg('');
     },[identification_number,password])
-    const handleSubmit = async (e) =>
-            {
-              e.preventDefault(); 
-              try{
-                const response = await axios.post('/api/login/',JSON.stringify({identification_number,password}),
-                {
-                    headers:{'Content-Type':'application/json'},
-                    withCredentials:true
-                }
-                );
-              console.log(JSON.stringify(response?.data));
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-              setSuccess(true);
-              }
-              catch (err)
-              {
-               if(!err?.response)
-               {
-                setErrMsg('No server response')
-               }
-               else if(err.response ?.status === '400')
-               {
-                   setErrMsg('Missing username or password');
-               }
-               else if(err.response ?.status === '401')
-               {
-                    setErrMsg('unautherized')
-               }
-               else{
-                  setErrMsg('LOginfaild')
-               }
-              }
-              
+        const data =
+        {
+            identification_number,
+            password,
+        };
+
+        try {
+            const response = await axios.post('http://localhost:8000/api/auth/login/',
+                JSON.stringify(data ),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+            console.log(JSON.stringify(response?.data));
+          
+            setIdentificationNumber('');
+            setPassword('');
+            
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 400) {
+                setErrMsg('Missing Username or Password');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
             }
+            errRef.current.focus();
+        }
+    }
   return (
     <div className=''>
      	{success ? (<div>logged in</div>) :(
@@ -63,7 +64,7 @@ function LoginForm() {
                 <div className='mt-4'>
                         <div>
                             <label className="block" htmlFor="id">ID Number</label>
-                            <input type="text" placeholder="ID Number" id='id' autoComplete="off" required value={identification_number} onChange={(e)=>setIdentification_number(e.target.value)} className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
+                            <input type="text" placeholder="ID Number" id='id' autoComplete="off" required value={identification_number} onChange={(e)=>setIdentificationNumber(e.target.value)} className="w-full border border-gray-300 px-3 py-1.5 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" />
                         </div>
                         <div className='mt-4'>
                             <label className="block" htmlFor="Password">Password</label>

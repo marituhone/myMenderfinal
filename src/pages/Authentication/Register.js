@@ -223,7 +223,7 @@ function Register() {
             </div>
             <div>
                 {/* <Link to="/register"> */}
-                <button  type="submit" className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md' >Sign up</button>
+                <button  disabled={!validFname || !validLname || !validPassword || !validPassword2 || !validId}  className='w-full justify-center bg-indigo-600 px-4 border-transparent font-medium text-sm shadow-sm text-white py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 rounded-md' >Sign up</button>
                 {/* </Link> */}
             </div>
             </form>

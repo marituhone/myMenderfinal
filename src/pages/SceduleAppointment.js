@@ -1,6 +1,22 @@
 import React from 'react'
 
+
+
+
+
 function SceduleAppointment() {
+
+ 
+
+
+
+
+
+
+
+
+
+   
   return (
     <section className='space-y-10 md:mb-10 '>
             <h2 className='font-serif font-normal text-3xl px-8'>Scedule Appointment</h2>

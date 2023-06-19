@@ -1,0 +1,12 @@
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Adjust the height as needed */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Adjust the margin as needed */
+}
