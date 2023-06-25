@@ -108,7 +108,7 @@ function Register() {
         }
         try 
         {
-          const response = await axios.post('http://localhost:8000/api/auth/register_user/',JSON.stringify({first_name:first_name,last_name:last_name,password:password,identification_number:identification_number,email:email,password2:password2}),  {
+          const response = await axios.post('http://localhost:8000/api/auth/register_admin/',JSON.stringify({first_name:first_name,last_name:last_name,password:password,identification_number:identification_number,email:email,password2:password2}),  {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true
             
