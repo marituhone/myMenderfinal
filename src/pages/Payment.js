@@ -1,39 +1,80 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const Payment = () => {
+  const [isActive, setIsActive] = useState(false);
+  const { id } = useParams();
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
+  const buttonStyle = {
+    backgroundColor: isActive ? "white" : "blue",
+    color: isActive ? "blue" : "white",
+    padding: "10px 20px",
+    borderRadius: "4px",
+    border: "none",
+    cursor: "pointer",
+  };
+
   return (
     <div className="flex justify-center py-8">
-      <div className="w-full md:w-2/3 bg-gray-200 p-4 rounded-lg flex ">
-       
+      <div className="flex w-full rounded-lg bg-gray-200 p-4 md:w-2/3 ">
         <div className="w-1/2 p-4 ">
-          <h2 className="text-2xl font-bold mb-4">Pay with</h2>
+          <h2 className="mb-4 text-2xl font-bold">Pay with</h2>
           <div className="flex flex-col  space-y-12">
-            <div className="flex items-center space-x-2 border-b  border-white pb-2">
-              <img src="https://www.rocketremit.com/wp-content/uploads/2017/10/TeleBirr-Logo-e1674188756476.png" alt="Telebirr" className="w-6 h-6" />
+            <button
+              style={buttonStyle}
+              onClick={handleClick}
+              className="flex items-center space-x-2 border-b  border-white pb-2"
+            >
+              <img
+                src="https://www.rocketremit.com/wp-content/uploads/2017/10/TeleBirr-Logo-e1674188756476.png"
+                alt="Telebirr"
+                className="h-6 w-6"
+              />
               <span className="font-semibold">Telebirr</span>
-            </div>
-            <div className="flex items-center space-x-2 border-b border-white pb-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Awash_Bank_Final_logo.jpg/800px-Awash_Bank_Final_logo.jpg?20210922052149" alt="Awash" className="w-6 h-6" />
+            </button>
+            <button className="flex items-center space-x-2 border-b border-white pb-2">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Awash_Bank_Final_logo.jpg/800px-Awash_Bank_Final_logo.jpg?20210922052149"
+                alt="Awash"
+                className="h-6 w-6"
+              />
               <span className="font-semibold">Awash</span>
-            </div>
-            <div className="flex items-center space-x-2 border-b border-white pb-2">
-              <img src="https://hellocashonline.files.wordpress.com/2020/09/cropped-hellocash-png-logo.png?w=200" alt="Hello Cash" className="w-6 h-6" />
+            </button>
+            <button className="flex items-center space-x-2 border-b border-white pb-2">
+              <img
+                src="https://hellocashonline.files.wordpress.com/2020/09/cropped-hellocash-png-logo.png?w=200"
+                alt="Hello Cash"
+                className="h-6 w-6"
+              />
               <span className="font-semibold">Hello Cash</span>
-            </div>
+            </button>
           </div>
-          <div className='ml-52 mt-64'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-
+          <div className="ml-52 mt-64">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6 "
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className="w-1/2 p-4 bg-white rounded-lg shadow-md">
-          
-          <div className='chapa-logo'>
-          {/* <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167 63" style="enable-background:new 0 0 167 63;" xml:space="preserve">
+        <div className="w-1/2 rounded-lg bg-white p-4 shadow-md">
+          <div className="chapa-logo">
+            {/* <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167 63" style="enable-background:new 0 0 167 63;" xml:space="preserve">
                                 <path class="st0" d="M11.8,26.2h23.5l0,0l0,0c0,3.6-2.9,6.5-6.5,6.5c0,0,0,0,0,0h-17c-1.8,0-3.3-1.5-3.3-3.3l0,0l0,0
                                 C8.6,27.7,10,26.2,11.8,26.2L11.8,26.2L11.8,26.2z"></path>
                                 <path class="st0" d="M35.1,17.6l-4.7,6.5h6.2c3.6,0,6.5-2.9,6.5-6.5c0,0,0,0,0,0H35.1z"></path>
@@ -59,21 +100,29 @@ const Payment = () => {
                                 <path class="st2" d="M64.7,35.8c-3.9,0-7-3.2-7-7c0-3.9,3.2-7,7-7c1.9,0,3.6,0.8,4.9,2.1l4.1-4c-4.9-5-13-5.1-18-0.2s-5.1,13-0.2,18
                                 s13,5.1,18,0.2c0,0,0.1-0.1,0.1-0.1l-4-4C68.4,35.1,66.6,35.8,64.7,35.8z"></path>
                             </svg> */}
-                        <img src='https://pbs.twimg.com/profile_images/1565219509841326080/m3POypTs_400x400.jpg' className='w-full h-56'></img>
+            <img
+              src="https://pbs.twimg.com/profile_images/1565219509841326080/m3POypTs_400x400.jpg"
+              className="h-56 w-full"
+            ></img>
           </div>
-          <h2 className="text-2xl font-bold mb-4">Amount to Pay</h2>
-          <h2 className="text-3xl font-bold mb-4">500 Birr</h2>
+          <h2 className="mb-4 text-2xl font-bold">Amount to Pay</h2>
+          <h2 className="mb-4 text-3xl font-bold">500 Birr</h2>
           <div className="mb-4">
-          
-            <p className='font-serif'>Pay to get detailed document</p>
+            <p className="font-serif">Pay to get detailed document</p>
           </div>
           <div>
-            <label className="block mb-2 font-serif">Phone Number</label>
-            <input type="text" className="w-full border border-gray-300 rounded px-3 py-2" />
+            <label className="mb-2 block font-serif">Phone Number</label>
+            <input
+              type="text"
+              className="w-full rounded border border-gray-300 px-3 py-2"
+            />
           </div>
-          <button className='bg-indigo-500 w-full mt-4 p-2 rounded-md font-serif font-semibold'>Pay now</button>
+          <Link to={`/bidform/${id}`}>
+            <button className="mt-4 w-full rounded-md bg-indigo-500 p-2 font-serif font-semibold">
+              Pay now
+            </button>
+          </Link>
         </div>
-        
       </div>
     </div>
   );

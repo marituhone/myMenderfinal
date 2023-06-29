@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-import Services from './Services';
+import AnnouncmentList from './AnnouncmentList';
 
 function Landing() {
     const slides =
@@ -56,8 +56,7 @@ function Landing() {
             
 
        </div>
-       <Services />
-
+       <AnnouncmentList />
 
     </section>
   )
