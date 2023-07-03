@@ -38,7 +38,7 @@ const UserDashboard = () => {
         console.log(appointmentService);
       } catch (error) {
         toast.error("Error fetching requirement");
-        console.error("Error fetching requirement:", error);
+        // console.error("Error fetching requirement:", error);
       }
     };
 

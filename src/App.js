@@ -196,9 +196,9 @@ const App = () => {
             <Route
               path="/faq"
               element={
-                <AuthInterecpetor>
+                // <AuthInterecpetor>
                   <FeedbackForm />
-                </AuthInterecpetor>
+                // </AuthInterecpetor>
               }
             />
           </Route>

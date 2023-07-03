@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "../../api/axios";
 import { toast } from "react-toastify";
 
-const Name_REGEX = /^[A-z][A-z]{3,23}$/;
+const Name_REGEX = /^[A-z][A-z]{1,23}$/;
 const Id_REGEX = /^bole\/\d{5}\/\d{4}$/; //begin with a-z follow by forward slash then digit of 4 then slash then digit of 2
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/; //must contain at least one lower case one upper case and number and special character and the length should be 8-24
 const EMAIL_REGEX = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9._-]+)\.([a-zA-Z]{2,5})$/;
@@ -181,7 +181,7 @@ function Register() {
                         : "hidden"
                     }
                   >
-                    4 to 24 alphabets.
+                    2 to 24 alphabets.
                     <br />
                   </p>
                 </div>

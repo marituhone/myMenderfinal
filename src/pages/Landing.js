@@ -8,10 +8,10 @@ function Landing() {
     const slides =
     [
         {
-            url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',
+            url: 'https://th.bing.com/th/id/R.b65f0114ba0a0ddc5ed237ee5523b74b?rik=dwWBk1Y3Z4Ca6g&riu=http%3a%2f%2fasheweyna.net%2fimg%2fportfolio%2fgov2.jpg&ehk=5ytq9tItKLShpKO1eA93MYu00hPf%2bXnM6R2UerNbFiM%3d&risl=&pid=ImgRaw&r=0',
           },
           {
-            url: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+            url: 'https://th.bing.com/th/id/OIP.oLsJKKHvJThQHSgKDAgngAAAAA?pid=ImgDet&rs=1',
           },
     ]
     const [currentIndex, setCurrentIndex] = useState(0);

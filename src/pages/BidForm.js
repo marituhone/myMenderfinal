@@ -38,12 +38,65 @@ function BidForm() {
   return (
     <>
       <div className="flex min-h-screen flex-row justify-center bg-gray-100 px-6 py-12 lg:px-8">
-        <div className="flex min-h-screen w-2/3 bg-gray-100 pt-24">
-          the beneficiary and the HDPO following successful selection from the
-          lottery, and calls for the family’s payment of the 20 percent
-          down-payment. Once paid, the bank issues the family with a receipt
-          which they must deliver to the HDPO along with Form 03 to initiate the
-          signing of the title deed.
+        <div className="flex flex-col space-y-6 min-h-screen w-2/3 bg-gray-100 pt-24">
+        Introduction
+
+    Background and Context:
+        Provide a brief overview of the project and the purpose of the bid document.
+        Describe the nature of the shop bid, such as the construction, renovation, or expansion of a retail shop.
+    Instructions for Bidders:
+        Clearly state the instructions that bidders should follow when preparing and submitting their proposals.
+        Include information on proposal format, required documents, and submission requirements.
+
+Scope of Work
+
+    Overview of the Shop Project:
+        Provide a summary of the shop project, including its purpose, location, and size.
+    Detailed Description of Work:
+        Describe the specific tasks and activities involved in the shop project, such as construction, interior design, fixtures, and equipment installation.
+        Specify any requirements related to permits, licenses, or compliance with building codes and regulations.
+    Deliverables and Milestones:
+        Clearly outline the deliverables expected from the bidder, such as completed construction, installed fixtures, and operational equipment.
+        Define milestones or deadlines for significant project stages or completion of specific tasks.
+    Acceptance Criteria:
+        Specify the criteria that will be used to evaluate and accept the deliverables, such as quality standards, compliance with specifications, and adherence to the proposed design.
+
+Technical Requirements
+
+    Shop Specifications and Design:
+        Provide detailed specifications of the shop design, including layout, flooring, lighting, and signage.
+    Construction and Materials:
+        Describe the construction requirements, materials to be used, and any specific techniques or finishes required.
+    Equipment and Fixtures:
+        Specify the required equipment and fixtures, such as shelving, display units, cash registers, and security systems.
+    Utilities and Services:
+        Outline the utility connections needed, such as electricity, water, HVAC systems, and internet connectivity.
+    Safety and Accessibility:
+        Highlight any safety and accessibility requirements, including fire safety measures, emergency exits, and compliance with disability access regulations.
+
+Proposal Submission
+
+    Deadline for Submission:
+        Clearly state the deadline by which bidders must submit their proposals.
+    Contact Information for Proposal Submission:
+        Provide the contact details (email, mailing address, etc.) where bidders should send their proposals.
+    Required Documents and Format:
+        Specify the documents that bidders need to include in their proposals, such as a cover letter, cost estimates, shop design plans, and references.
+        Outline the preferred format (e.g., PDF, Word) for submitting the documents.
+    Evaluation Criteria:
+        Briefly describe the criteria that will be used to evaluate the proposals, such as experience, cost, design creativity, and timeline.
+
+Bid Evaluation and Selection Process
+
+    Evaluation Methodology:
+        Explain the evaluation process, including who will review the proposals and how the evaluation will be conducted.
+    Criteria for Evaluating Bids:
+        Specify the factors that will be considered during the evaluation, such as relevant experience, price competitiveness, quality, and adherence to the project requirements.
+    Selection Process and Timeline:
+        Provide an overview of the selection process, including the timeline for review, shortlisting, and final decision.
+        <button className="bg-green-300 w-1/5 rounded-xl p-1">
+          Download
+        </button>
         </div>
 
         <div>

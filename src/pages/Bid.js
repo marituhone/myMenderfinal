@@ -57,12 +57,13 @@ function Bid() {
             </div>
             <div className="upper  border-gray/20 ml-4  flex flex-col justify-around border-b py-6 md:ml-0 md:space-y-3">
               <div className="flex space-x-2 font-serif text-blue-950">
-                <p className="font-semibold">Bidding start date :</p>
-                <p>6/19/2023</p>
+                <p className="font-semibold">Bidding start description :</p>
+                {/* <p>6/19/2023</p> */}
+                {bid.description}
               </div>
               <div className="flex space-x-2 font-serif text-blue-950">
-                <p className="font-semibold">Bidding close date :</p>
-                <p>8/20/2023</p>
+                <p className="font-semibold">Bidding start date :</p>
+                <p>7/2/2023</p>
               </div>
             </div>
             <div className="flex space-x-8 px-2 py-2">
